@@ -60,8 +60,11 @@
       group = "adp";
       shell = pkgs.zsh;
       extraGroups = [ "users" "wheel" "networkmanager" "dialout" "libvirtd" ];
+      hashedPasswordFile = "/persistent/shadow-adp";
     };
+    users.root.password = "";
     groups.adp.gid = 1000;
+    mutableUsers = false;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -91,11 +94,16 @@
       "/var/lib/nixos"
       "/var/lib/systemd/coredump"
       "/etc/NetworkManager/system-connections"
-      "/etc/shadow"
     ];
     files = [
       "/etc/machine-id"
     ];
+
+    users.adp = {
+      directories = [
+        "steam"
+      ];
+    };
   };
 
   system.stateVersion = "23.11"; # No tocar esto

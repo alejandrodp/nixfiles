@@ -2,6 +2,7 @@
 with lib;
 {
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+    "anydesk"
     "discord"
     "pycharm-professional"
     "rar"

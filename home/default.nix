@@ -10,7 +10,6 @@ with lib;
     ./isolation.nix
     ./options.nix
     ./cli.nix
-    ./systemd
   ];
 
   nixpkgs.overlays = [ self.overlay nixGL.overlay ];
@@ -30,6 +29,10 @@ with lib;
   };
 
   xdg.enable = true;
+
+  xdg.configFile."home-manager" = mkIf (!config.home.isolation.active) {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nix";
+  };
 
   nix.registry = {
     "system".to = {

@@ -38,7 +38,7 @@
       fsType = "btrfs";
       options = [ "subvol=/" ];
     };
-    
+
     "/boot" = {
       device = "/dev/disk/by-uuid/B77C-ACA2";
       fsType = "vfat";

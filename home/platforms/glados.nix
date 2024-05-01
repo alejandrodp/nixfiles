@@ -8,8 +8,8 @@
     };
 
     display = {
-      "0" = "DP-1";
-      "1" = "HDMI-1";
+      "1" = "DP-1";
+      "0" = "HDMI-1";
 
       autorandrProfile = {
         fingerprint = {
@@ -19,19 +19,19 @@
         config = {
           DP-1 = {
             enable = true;
-            primary = true;
-            position = "1920x0";
+            primary = false;
+            position = "0x0";
             mode = "1920x1080";
-            rate = "59.96";
+            rate = "74.92";
             rotate = "normal";
           };
 
           HDMI-1 = {
             enable = true;
-            primary = false;
-            position = "0x0";
+            primary = true;
+            position = "1920x0";
             mode = "1920x1080";
-            rate = "74.92";
+            rate = "59.96";
             rotate = "normal";
           };
         };

@@ -22,10 +22,12 @@ with lib;
       gcc
       htop
       killall
+      lm_sensors
       man-pages
       man-pages-posix
       neovim
       rar
+      smartmontools
       tree
       units
       unzip

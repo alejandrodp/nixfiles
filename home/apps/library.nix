@@ -7,6 +7,16 @@ in
   options.local.apps.defaultApps.enable = mkEnableOption "Default app library";
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
+      
+      (anydesk.overrideAttrs {
+        version = "6.3.2";
+        src = pkgs.fetchurl {
+        url = "https://download.anydesk.com/linux/anydesk-6.3.2-amd64.tar.gz";
+        sha256 = "sha256-nSY4qHRsEvQk4M3JDHalAk3C6Y21WlfDQ2Gpp6/jjMs=";
+        };
+      })
+
+
       chromium
       darktable
       deluge

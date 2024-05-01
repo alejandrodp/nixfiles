@@ -9,7 +9,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    
+
     flake-utils.url = "github:numtide/flake-utils";
     impermanence.url = "github:nix-community/impermanence";
 
@@ -34,8 +34,8 @@
         value = nixpkgs.lib.nixosSystem {
           inherit system;
 
-          modules = [ 
-            (import ./base) 
+          modules = [
+            (import ./base)
             impermanence.nixosModules.impermanence
           ];
         };
@@ -74,14 +74,12 @@
     {
       nixosConfigurations = configs "base" base;
       homeConfigurations = configs "home" home;
-      packages.${system} = localPkgs pkgs;
       formatter.${system} = pkgs.nixpkgs-fmt;
 
       overlay = self: super: {
         unstable = import unstable {
           inherit (super) config system;
         };
-        local = localPkgs self;
       };
     };
 }

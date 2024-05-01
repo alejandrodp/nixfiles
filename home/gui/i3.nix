@@ -47,7 +47,7 @@ in
           # y se sobreescriba las cosas que pongo acA
           # NO QUITARLO. ver man home-configuration.nix
           keybindings = mkOptionDefault {
-            "${mod}+Return" = "exec ${pkgs.kitty}/bin/kitty ${pkgs.tmux}/bin/tmux";
+            "${mod}+Return" = "exec ${pkgs.kitty}/bin/kitty";
             "${mod}+Tab" = "focus right";
             "${mod}+Shift+Tab" = "focus left";
             "${mod}+Shift+s" = "exec ${pkgs.maim}/bin/maim -s -u | ${pkgs.xclip}/bin/xclip -selection clipboard -t image/png -i";
@@ -56,22 +56,22 @@ in
           };
 
           startup = [
-            {
-              command = "${pkgs.xss-lock}/bin/xss-lock --transfer-sleep-lock -- ${pkgs.i3lock}/bin/i3lock --nofork";
-              notification = false;
-            }
-            {
-              command = "${pkgs.networkmanagerapplet}/bin/nm-applet";
-              notification = false;
-            }
-            {
-              command = "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/Pictures/wallpapers/jupiter.png";
-              notification = false;
-              always = true;
-            }
-            {
-              command = "${pkgs.i3-gaps}/bin/i3-msg 'workspace 1; exec ${pkgs.firefox}/bin/firefox'";
-            }
+            # {
+            #   command = "${pkgs.xss-lock}/bin/xss-lock --transfer-sleep-lock -- ${pkgs.i3lock}/bin/i3lock --nofork";
+            #   notification = false;
+            # }
+            # {
+            #   command = "${pkgs.networkmanagerapplet}/bin/nm-applet";
+            #   notification = false;
+            # }
+            # {
+            #   command = "${pkgs.feh}/bin/feh --bg-fill ${config.home.homeDirectory}/Pictures/wallpapers/jupiter.png";
+            #   notification = false;
+            #   always = true;
+            # }
+            # {
+            #   command = "${pkgs.i3-gaps}/bin/i3-msg 'workspace 1; exec ${pkgs.firefox}/bin/firefox'";
+            # }
             {
               command = "${pkgs.i3-gaps}/bin/i3-msg 'workspace 2; exec ${pkgs.tdesktop}/bin/telegram-desktop'";
             }
