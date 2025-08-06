@@ -47,7 +47,7 @@
 
   services.dnsmasq.enable = false;
 
-  hardware.graphics.enable = true;
+  hardware.opengl.enable = true;
 
   hardware.amdgpu.opencl.enable = true;  
 
@@ -56,8 +56,8 @@
   ];
 
   # Enable sound.
-  services.pulseaudio.enable = true;
-  services.pipewire.enable = false;
+  sound.enable = true;
+  hardware.pulseaudio.enable = true;
 
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
@@ -87,7 +87,7 @@
     '';
   };
 
-  hardware.graphics.enable32Bit = true;
+  hardware.opengl.driSupport32Bit = true;
 
   services.openssh.enable = true;
 
