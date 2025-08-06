@@ -30,7 +30,7 @@
   networking.interfaces.wlo1.useDHCP = true;
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "es_CR.UTF-8";
+  i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16"; # TODO
     keyMap = "us";
@@ -39,16 +39,25 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    layout = "us";
-    libinput.enable = true;
+    xkb.layout = "us";
     displayManager.startx.enable = true;
   };
 
+  services.libinput.enable = true;
+
+  services.dnsmasq.enable = false;
+
   hardware.opengl.enable = true;
 
+  hardware.amdgpu.opencl.enable = true;  
+
+  environment.systemPackages = with pkgs; [
+    clinfo
+  ];
+
   # Enable sound.
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
+  services.pipewire.enable = false;
 
   programs.zsh.enable = true;
   environment.pathsToLink = [ "/share/zsh" ];
@@ -72,7 +81,7 @@
   programs.dconf.enable = true;
 
   nix = {
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -105,6 +114,17 @@
       ];
     };
   };
+
+
+  environment.etc."pkcs11/modules/ykcs11".text = ''
+      module: ${pkgs.yubico-piv-tool}/lib/libykcs11.so
+  '';
+
+  services = {
+    pcscd.enable = true;
+    udev.packages = [ pkgs.yubikey-personalization ];
+  };
+
 
   system.stateVersion = "23.11"; # No tocar esto
 

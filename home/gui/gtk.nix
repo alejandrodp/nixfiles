@@ -11,4 +11,5 @@ in
       libsForQt5.breeze-gtk
     ];
   };
+
 }

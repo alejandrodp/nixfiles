@@ -18,6 +18,7 @@ in
     ./startx.nix
   ];
 
+
   config = mkIf cfg.enable {
 
     local.gui = {
@@ -40,8 +41,10 @@ in
       };
 
       betterlockscreen = {
-        enable = true;
+        enable = false;
       };
+
+      playerctld.enable = true;
     };
 
     xdg.mimeApps.enable = true;

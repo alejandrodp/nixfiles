@@ -6,6 +6,7 @@ with lib;
     "discord"
     "pycharm-professional"
     "rar"
+    "slack"
     "steam"
     "steam-original"
     "steam-run"

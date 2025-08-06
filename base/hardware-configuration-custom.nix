@@ -15,7 +15,7 @@
 
   boot.initrd.postDeviceCommands = lib.mkAfter ''
     mkdir /btrfs_tmp
-    mount /dev/root_vg/root /btrfs_tmp
+    mount -o -ssd,noatime,compress=zstd /dev/root_vg/root /btrfs_tmp
     if [[ -e /btrfs_tmp/root ]]; then
         mkdir -p /btrfs_tmp/old_roots
         timestamp=$(date --date="@$(stat -c %Y /btrfs_tmp/root)" "+%Y-%m-%-d_%H:%M:%S")
@@ -36,7 +36,7 @@
     "/toplevel" = {
       device = "/dev/root_vg/root";
       fsType = "btrfs";
-      options = [ "subvol=/" ];
+      options = [ "subvol=/" "compress=zstd" "noatime" "ssd" ];
     };
 
     "/boot" = {
@@ -49,20 +49,20 @@
       device = "/dev/root_vg/root";
       neededForBoot = true;
       fsType = "btrfs";
-      options = [ "subvol=persistent" ];
+      options = [ "subvol=persistent" "compress=zstd" "noatime" "ssd" ];
     };
 
 
     "/nix" = {
       device = "/dev/root_vg/root";
       fsType = "btrfs";
-      options = [ "subvol=nix" ];
+      options = [ "subvol=nix" "compress=zstd" "noatime" "ssd" ];
     };
 
     "/home" = {
       device = "/dev/root_vg/root";
       fsType = "btrfs";
-      options = [ "subvol=home" ];
+      options = [ "subvol=home" "compress=zstd" "noatime" "ssd" ];
     };
 
 
