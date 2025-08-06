@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05"; # actualizar esto para actualizar
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11"; # actualizar esto para actualizar
     unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/nur";
     hm-isolation.url = "github:3442/hm-isolation";
@@ -14,7 +14,7 @@
     impermanence.url = "github:nix-community/impermanence";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.05"; # actualizar esto para actualizar
+      url = "github:nix-community/home-manager/release-24.11"; # actualizar esto para actualizar
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
