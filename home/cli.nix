@@ -6,7 +6,7 @@ with lib;
     zsh = {
       enable = true;
       syntaxHighlighting.enable = true;
-      initExtra = import ./zshrc.nix pkgs;
+      initContent = import ./zshrc.nix pkgs;
     };
     git = {
       enable = true;
