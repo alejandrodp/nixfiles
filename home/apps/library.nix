@@ -36,7 +36,7 @@ in
       element-desktop
       firefox
       gperftools
-      gwenview
+      kdePackages.gwenview
       helix
       jetbrains.pycharm-professional
       libreoffice
@@ -81,7 +81,7 @@ in
       maxCacheTtl = 3600 * 6;
       maxCacheTtlSsh = 3600 * 6;
 
-      pinentryPackage = pkgs.pinentry-emacs;
+      pinentry.package = pkgs.pinentry-emacs;
     };
 
 
