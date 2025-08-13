@@ -24,7 +24,7 @@ with lib;
       package = pkgs.papirus-icon-theme;
     };
     theme = {
-      package = pkgs.gnome.gnome-themes-extra;
+      package = pkgs.gnome-themes-extra;
       name = "Breeze-Dark";
     };
 
