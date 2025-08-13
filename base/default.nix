@@ -56,7 +56,7 @@
   ];
 
   # Enable sound.
-  hardware.pulseaudio.enable = true;
+  services.pulseaudio = true;
   services.pipewire.enable = false;
 
   programs.zsh.enable = true;
