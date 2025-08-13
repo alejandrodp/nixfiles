@@ -10,6 +10,7 @@ with lib;
     "steam"
     "steam-original"
     "steam-run"
+    "steam-unwrapped"
     "teams"
     "vscode-extension-ms-vscode-cpptools"
     "zoom"
