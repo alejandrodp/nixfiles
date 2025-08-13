@@ -58,6 +58,7 @@ in
       xdg-utils
       xorg.xmodmap
       yubikey-manager
+      zafiro-icons
       zola
       zoom-us
     ];
