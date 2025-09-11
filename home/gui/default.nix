@@ -16,6 +16,7 @@ in
     ./i3.nix
     ./polybar.nix
     ./startx.nix
+    ./halloy.nix
   ];
 
 
@@ -37,6 +38,10 @@ in
       };
 
       dunst = {
+        enable = true;
+      };
+
+      halloy = {
         enable = true;
       };
 
