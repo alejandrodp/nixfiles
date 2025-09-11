@@ -49,7 +49,7 @@
 
   hardware.graphics.enable = true;
 
-  hardware.amdgpu.opencl.enable = true;  
+  hardware.amdgpu.opencl.enable = true;
 
   environment.systemPackages = with pkgs; [
     clinfo
@@ -117,7 +117,7 @@
 
 
   environment.etc."pkcs11/modules/ykcs11".text = ''
-      module: ${pkgs.yubico-piv-tool}/lib/libykcs11.so
+    module: ${pkgs.yubico-piv-tool}/lib/libykcs11.so
   '';
 
   services = {

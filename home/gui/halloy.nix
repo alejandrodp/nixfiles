@@ -19,7 +19,7 @@ in
           chathistory = true;
           port = 6697;
           nickname = "alejandro";
-          nick_password = "alejandrino"
+          nick_password = "alejandrino";
           infinite_scroll = true;
           channels = [
             "#lobster"
