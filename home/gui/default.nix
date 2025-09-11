@@ -30,7 +30,7 @@ in
       i3.enable = mkDefault cfg.desktop;
       polybar.enable = mkDefault cfg.desktop;
       startx.enable = mkDefault cfg.desktop;
-      halloy.enable = mkDefault true
+      halloy.enable = mkDefault true;
     };
 
     services = mkIf cfg.desktop {
