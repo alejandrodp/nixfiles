@@ -9,16 +9,14 @@ in
     programs.halloy = {
       enable = true;
       settings = {
-        "buffer.channel.topic" = {
-          enabled = true;
-        };
         "servers.liberachat" = {
 
           server = "soju.notmp.io";
-          username = "fghjreiowghe/irc.libera.chat";
+          username = "alejandrosoju/irc.libera.chat";
           chathistory = true;
           port = 6697;
           nickname = "alejandro";
+          password = "password";
           nick_password = "alejandrino";
           infinite_scroll = true;
           channels = [
