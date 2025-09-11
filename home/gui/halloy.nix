@@ -9,7 +9,7 @@ in
     programs.halloy = {
       enable = true;
       settings = {
-        "servers.liberachat" = {
+        servers.liberachat = {
 
           server = "soju.notmp.io";
           username = "alejandrosoju/irc.libera.chat";
